@@ -11,3 +11,21 @@ function onInputChange(event) {
   }
   spanRef.textContent = event.currentTarget.value;
 }
+// -----
+
+const { nameLabel, input} = {
+  nameLabel: document.querySelector("#name-output"),
+  input: document.querySelector("#name-input"),
+};
+
+input.addEventListener("input", () => {
+  if (input.value === "") {
+    nameLabel.textContent = "Anonymous";
+  } else nameLabel.textContent = input.value;
+  console.log(" input.value:", input.value);
+});
+
+// function onInputChange(event) {
+    // console.log(event.currentTarget.value)
+//     refs.nameLabel.textContent = event.currentTarget.value;
+// };

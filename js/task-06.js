@@ -9,3 +9,22 @@ function onInputBlurValid() {
     inputRef.classList.replace("invalid", "valid");
   }
 }
+// -------
+
+const input = document.querySelector("#validation-input");
+
+input.addEventListener("blur", () => {
+  const dataLength = input.getAttribute("data-length");
+  const currentValue = input.value.length;
+
+  console.log("currentValue:", currentValue);
+  console.log("dataLength:", dataLength);
+
+  if (currentValue == dataLength) {
+    input.classList.add("valid");
+    input.classList.remove("invalid");
+  } else {
+    input.classList.add("invalid");
+    input.classList.remove("valid");
+  }
+});
