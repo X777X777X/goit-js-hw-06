@@ -1,27 +1,12 @@
-const inputRef = document.querySelector("#name-input");
-const spanRef = document.querySelector("#name-output");
-
-inputRef.addEventListener("input", onInputChange);
-
-function onInputChange(event) {
-  console.log(event.currentTarget.value);
-
-  if (event.currentTarget.value === "") {
-    spanRef.textContent = "Anonymous";
-  }
-  spanRef.textContent = event.currentTarget.value;
-}
-// -----
-
 const { nameLabel, input} = {
   nameLabel: document.querySelector("#name-output"),
   input: document.querySelector("#name-input"),
 };
 
 input.addEventListener("input", () => {
-  if (input.value === "") {
+  if (input.value.trim() === "") {
     nameLabel.textContent = "Anonymous";
-  } else nameLabel.textContent = input.value;
+  } else nameLabel.textContent = input.value.trim();
   console.log(" input.value:", input.value);
 });
 
