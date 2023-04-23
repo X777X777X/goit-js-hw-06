@@ -25,6 +25,19 @@ button {
 
 .gallery {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
   list-style: none;
+}
+
+.gallery-item {
+  margin: 5px;
+}
+
+.gallery-image {
+  width: 400px;
+  height: 450px;
+  object-fit: cover;
 }
